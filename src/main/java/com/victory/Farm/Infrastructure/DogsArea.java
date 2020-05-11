@@ -14,4 +14,8 @@ public class DogsArea {
         }
         return localInstance;
     }
+
+    public String getName(){
+        return "DogsArea";
+    }
 }

@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Dog {
     private int id;
     private String name;
-    private Boolean isHealthy = true;
-    private Boolean isFed = true;
+    private Boolean isHealthy = false;
+    private Boolean isFed = false;
     private ArrayList<Instructions> instructionsList;
     private Age age;
 
@@ -77,5 +77,9 @@ public class Dog {
 
     public void setAge(Age age) {
         this.age = age;
+    }
+
+    public void dogAtHome(){
+        System.out.println("Dog " + getName() + " is at home now.");
     }
 }

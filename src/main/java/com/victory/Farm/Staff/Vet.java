@@ -1,13 +1,14 @@
 package com.victory.Farm.Staff;
 
+import com.victory.Farm.Dogs.Dog;
+
 import java.util.Date;
 
-public class Vet {
+public class Vet{
     private int id;
     private String name;
     private String surname;
     private Date birthDate;
-    private Boolean isBusy = false;
 
     public Vet(int id, String name, String surname, Date birthDate) {
         this.id = id;
@@ -44,11 +45,17 @@ public class Vet {
         this.birthDate = birthDate;
     }
 
-    public Boolean getBusy() {
-        return isBusy;
+    public void vetExamination(Dog dog){
+        System.out.println("Vet "+ "" + " examines a dog " + dog.getName());
+        if (!dog.getHealthy()) {
+            System.out.println("Dog "+ dog.getName() + " is ill.");
+            cure(dog);
+        }
+        System.out.println("Dog "+ dog.getName() + " is healthy.");
     }
 
-    public void setBusy(Boolean busy) {
-        isBusy = busy;
+    public void cure(Dog dog){
+        System.out.println("Vet "+ "" + " cures a dog " + dog.getName());
+        dog.setHealthy(true);
     }
 }
