@@ -1,6 +1,7 @@
 package com.victory.Farm.Infrastructure;
 
 public class Aviary {
+
     private int id;
     private Boolean isBusy = false;
     private int dogId = -1;

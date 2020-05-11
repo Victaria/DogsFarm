@@ -1,6 +1,7 @@
 package com.victory.Farm.Infrastructure;
 
 public class DogsArea {
+
     private static volatile DogsArea instance;
     public static DogsArea getInstance(){
         DogsArea localInstance = instance;

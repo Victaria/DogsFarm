@@ -4,4 +4,5 @@ public enum Age {
     PUPPY,
     ADULT,
     OLD
+
 }

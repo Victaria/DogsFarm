@@ -7,6 +7,7 @@ import com.victory.Farm.Staff.Vet;
 import java.util.ArrayList;
 
 public class Storage {
+    
     private static ArrayList<Dog> dogsList = new ArrayList<Dog>();
     private static ArrayList<Employee> staffList = new ArrayList<Employee>();
     private static ArrayList<Vet> vetList = new ArrayList<Vet>();

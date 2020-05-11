@@ -5,6 +5,7 @@ import com.victory.Farm.Dogs.Dog;
 import java.util.Date;
 
 public class Vet{
+
     private int id;
     private String name;
     private String surname;

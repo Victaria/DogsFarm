@@ -51,5 +51,4 @@ public class Schedule {
         }
          System.out.println("----------------End of the day!-----------------");
     }
-
 }

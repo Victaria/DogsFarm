@@ -82,4 +82,5 @@ public class Dog {
     public void dogAtHome(){
         System.out.println("Dog " + getName() + " is at home now.");
     }
+
 }

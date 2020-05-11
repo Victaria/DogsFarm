@@ -7,6 +7,7 @@ import com.victory.Farm.Staff.Vet;
 import com.victory.Farm.Storage;
 
 public class Actions {
+
     static int i = 0;
     static int j = 0;
     public static void feed(Dog dog){
