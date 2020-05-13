@@ -7,25 +7,25 @@ import com.victory.Farm.Storage;
 
 public class Schedule {
 
-    public static void createSchedule(){
+    public static void createSchedule() {
 
-        for (Dog dog : Storage.getDogsList()){
+        for (Dog dog : Storage.getDogsList()) {
             Actions.feed(dog);
         }
         System.out.println("---------------------------------next step------------------------------------");
 
-        for (Dog dog : Storage.getDogsList()){
+        for (Dog dog : Storage.getDogsList()) {
             Actions.vetExamination(dog);
         }
         System.out.println("---------------------------------next step------------------------------------");
 
-        for (Aviary aviary: Storage.getAviaryList()){
+        for (Aviary aviary : Storage.getAviaryList()) {
             Actions.aviaryClean(aviary);
         }
         System.out.println("---------------------------------next step------------------------------------");
 
-        for (Dog dog : Storage.getDogsList()){
-            switch (dog.getAge()){
+        for (Dog dog : Storage.getDogsList()) {
+            switch (dog.getAge()) {
                 case PUPPY:
                     Actions.puppiesTrain(dog);
                     break;
@@ -39,16 +39,16 @@ public class Schedule {
         }
         System.out.println("---------------------------------next step------------------------------------");
 
-        for (Dog dog : Storage.getDogsList()){
-            if (dog.getAge().equals(Age.ADULT) || dog.getAge().equals(Age.PUPPY)){
+        for (Dog dog : Storage.getDogsList()) {
+            if (dog.getAge().equals(Age.ADULT) || dog.getAge().equals(Age.PUPPY)) {
                 Actions.dogsCameHome(dog);
             }
         }
         System.out.println("---------------------------------next step------------------------------------");
 
-        for (Dog dog : Storage.getDogsList()){
+        for (Dog dog : Storage.getDogsList()) {
             Actions.feed(dog);
         }
-         System.out.println("----------------End of the day!-----------------");
+        System.out.println("----------------End of the day!-----------------");
     }
 }

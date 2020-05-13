@@ -4,18 +4,18 @@ import com.victory.Farm.Dogs.Dog;
 
 import java.util.Date;
 
-public class Vet{
+public class Vet {
 
     private int id;
     private String name;
     private String surname;
     private Date birthDate;
 
-    public Vet(int id, String name, String surname, Date birthDate) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.birthDate = birthDate;
+    public Vet(VetBuilder vetBuilder) {
+        this.id = vetBuilder.getId();
+        this.name = vetBuilder.getName();
+        this.surname = vetBuilder.getSurname();
+        this.birthDate = vetBuilder.getBirthDate();
     }
 
     public int getId() {
@@ -46,17 +46,17 @@ public class Vet{
         this.birthDate = birthDate;
     }
 
-    public void vetExamination(Dog dog){
-        System.out.println("Vet "+ "" + " examines a dog " + dog.getName());
+    public void vetExamination(Dog dog) {
+        System.out.println("Vet " + "" + " examines a dog " + dog.getName());
         if (!dog.getHealthy()) {
-            System.out.println("Dog "+ dog.getName() + " is ill.");
+            System.out.println("Dog " + dog.getName() + " is ill.");
             cure(dog);
         }
-        System.out.println("Dog "+ dog.getName() + " is healthy.");
+        System.out.println("Dog " + dog.getName() + " is healthy.");
     }
 
-    public void cure(Dog dog){
-        System.out.println("Vet "+ "" + " cures a dog " + dog.getName());
+    public void cure(Dog dog) {
+        System.out.println("Vet " + "" + " cures a dog " + dog.getName());
         dog.setHealthy(true);
     }
 }

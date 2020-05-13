@@ -8,9 +8,10 @@ import com.victory.Farm.Storage;
 
 public class Actions {
 
-    static int i = 0;
-    static int j = 0;
-    public static void feed(Dog dog){
+    private static int i = 0;
+    private static int j = 0;
+
+    public static void feed(Dog dog) {
         if (i >= Storage.getStaffList().size()) {
             i = 0;
         }
@@ -19,7 +20,7 @@ public class Actions {
         i++;
     }
 
-    public static void vetExamination(Dog dog){
+    public static void vetExamination(Dog dog) {
         if (j >= Storage.getVetList().size()) {
             j = 0;
         }
@@ -28,8 +29,8 @@ public class Actions {
         j++;
     }
 
-    public static void aviaryClean(Aviary aviary){
-        if (!aviary.getClear()){
+    public static void aviaryClean(Aviary aviary) {
+        if (!aviary.isClear()) {
             if (i >= Storage.getStaffList().size()) {
                 i = 0;
             }
@@ -39,7 +40,7 @@ public class Actions {
         }
     }
 
-    public static void puppiesTrain(Dog dog){
+    public static void puppiesTrain(Dog dog) {
         if (i >= Storage.getStaffList().size()) {
             i = 0;
         }
@@ -48,7 +49,7 @@ public class Actions {
         i++;
     }
 
-    public static void adultsWork(Dog dog){
+    public static void adultsWork(Dog dog) {
         if (i >= Storage.getStaffList().size()) {
             i = 0;
         }
@@ -57,10 +58,11 @@ public class Actions {
         i++;
     }
 
-    public static void dogsCameHome(Dog dog){
-        for (Aviary aviary: Storage.getAviaryList()) {
-            if (aviary.getDogId() == dog.getId())
-            dog.dogAtHome();
+    public static void dogsCameHome(Dog dog) {
+        for (Aviary aviary : Storage.getAviaryList()) {
+            if (aviary.getDogId() == dog.getId()) {
+                dog.dogAtHome();
+            }
         }
     }
 }
