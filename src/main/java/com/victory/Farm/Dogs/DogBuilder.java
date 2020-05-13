@@ -64,16 +64,6 @@ public class DogBuilder {
         return instructionsList;
     }
 
-    public void addInstruction(Instructions instruction) {
-        if (!instructionsList.contains(instruction)) {
-            instructionsList.add(instruction);
-        }
-    }
-
-    public Boolean knowsInstruction(Instructions instruction) {
-        return instructionsList.contains(instruction);
-    }
-
     public Age getAge() {
         return age;
     }

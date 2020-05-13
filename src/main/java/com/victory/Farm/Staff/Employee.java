@@ -5,6 +5,8 @@ import com.victory.Farm.Dogs.Instructions;
 import com.victory.Farm.Infrastructure.Aviary;
 import com.victory.Farm.Infrastructure.DogsArea;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,7 +53,7 @@ public class Employee {
     }
 
     public synchronized void feed(Dog dog) {
-        if (!dog.getFed()) dog.setFed(true);
+        if (!dog.isFed()) dog.setFed(true);
         switch (dog.getAge()) {
             case OLD:
                 System.out.println("Employee " + getName() + " is feeding old dog " + dog.getName());

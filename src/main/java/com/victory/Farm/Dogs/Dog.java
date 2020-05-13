@@ -31,7 +31,7 @@ public class Dog {
         this.name = name;
     }
 
-    public Boolean getHealthy() {
+    public Boolean isHealthy() {
         return isHealthy;
     }
 
@@ -39,7 +39,7 @@ public class Dog {
         isHealthy = healthy;
     }
 
-    public Boolean getFed() {
+    public Boolean isFed() {
         return isFed;
     }
 

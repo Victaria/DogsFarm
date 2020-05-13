@@ -85,32 +85,32 @@ public class Main {
                 .id(1).name("Reks")
                 .isFed(true)
                 .isHealthy(true)
-                .instructionsList(Arrays.asList(Instructions.COME, Instructions.BARK, Instructions.SIT))
+                .instructionsList(new ArrayList<Instructions>(Arrays.asList(Instructions.COME, Instructions.BARK, Instructions.SIT)))
                 .age(Age.PUPPY).build());
         Storage.addDog(new DogBuilder()
                 .id(2).name("Bars")
                 .isFed(false)
                 .isHealthy(false)
-                .instructionsList(Arrays.asList(Instructions.COME, Instructions.BARK, Instructions.SIT))
+                .instructionsList(new ArrayList<Instructions>(Arrays.asList(Instructions.COME, Instructions.BARK, Instructions.SIT)))
                 .age(Age.ADULT).build());
         Storage.addDog(new DogBuilder()
                 .id(3).name("Kelly")
                 .isFed(true)
                 .isHealthy(true)
-                .instructionsList(Arrays.asList(Instructions.COME, Instructions.BARK, Instructions.SIT))
+                .instructionsList(new ArrayList<Instructions>(Arrays.asList(Instructions.COME, Instructions.BARK, Instructions.SIT)))
                 .age(Age.OLD).build());
         Storage.addDog(new DogBuilder()
                 .id(4).name("North")
                 .isFed(false)
                 .isHealthy(false)
-                .instructionsList(Arrays.asList(Instructions.PLACE, Instructions.STAY, Instructions.STAND))
+                .instructionsList(new ArrayList<Instructions>(Arrays.asList(Instructions.PLACE, Instructions.STAY, Instructions.STAND)))
                 .age(Age.PUPPY).build());
         Storage.addDog(new DogBuilder()
                 .id(5)
                 .name("Little")
                 .isFed(false)
                 .isHealthy(true)
-                .instructionsList(Arrays.asList(Instructions.GUARD, Instructions.NO))
+                .instructionsList(new ArrayList<Instructions>(Arrays.asList(Instructions.GUARD, Instructions.NO)))
                 .age(Age.PUPPY).build());
 
     }

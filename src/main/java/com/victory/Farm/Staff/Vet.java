@@ -48,7 +48,7 @@ public class Vet {
 
     public void vetExamination(Dog dog) {
         System.out.println("Vet " + "" + " examines a dog " + dog.getName());
-        if (!dog.getHealthy()) {
+        if (!dog.isHealthy()) {
             System.out.println("Dog " + dog.getName() + " is ill.");
             cure(dog);
         }
