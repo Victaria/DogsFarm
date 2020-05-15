@@ -1,4 +1,4 @@
-package com.victory.Farm.Infrastructure;
+package com.victory.farm.infrastructure;
 
 public class DogsArea {
     private static DogsArea instance;

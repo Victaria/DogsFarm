@@ -1,22 +1,18 @@
-package com.victory.Farm.Dogs;
+package com.victory.farm.dogs;
 
 import java.util.List;
 
-public class Dog {
+public abstract class Dog {
     private int id;
     private String name;
     private Boolean isHealthy;
     private Boolean isFed;
-    private List<Instructions> instructionsList;
-    private Age age;
 
     public Dog(DogBuilder dogBuilder) {
         this.id = dogBuilder.getId();
         this.name = dogBuilder.getName();
         this.isHealthy = dogBuilder.getHealthy();
         this.isFed = dogBuilder.getFed();
-        this.instructionsList = dogBuilder.getInstructionsList();
-        this.age = dogBuilder.getAge();
     }
 
     public int getId() {
@@ -45,32 +41,6 @@ public class Dog {
 
     public void setFed(Boolean fed) {
         isFed = fed;
-    }
-
-    public List<Instructions> getInstructionsList() {
-        return instructionsList;
-    }
-
-    public void setInstructionsList(List<Instructions> instructionsList) {
-        this.instructionsList = instructionsList;
-    }
-
-    public void addInstruction(Instructions instruction) {
-        if (!instructionsList.contains(instruction)) {
-            instructionsList.add(instruction);
-        }
-    }
-
-    public Boolean knowsInstruction(Instructions instruction) {
-        return instructionsList.contains(instruction);
-    }
-
-    public Age getAge() {
-        return age;
-    }
-
-    public void setAge(Age age) {
-        this.age = age;
     }
 
     public void dogAtHome() {

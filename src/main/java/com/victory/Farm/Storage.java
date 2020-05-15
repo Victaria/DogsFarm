@@ -1,9 +1,9 @@
-package com.victory.Farm;
+package com.victory.farm;
 
-import com.victory.Farm.Dogs.Dog;
-import com.victory.Farm.Infrastructure.Aviary;
-import com.victory.Farm.Staff.Employee;
-import com.victory.Farm.Staff.Vet;
+import com.victory.farm.dogs.Dog;
+import com.victory.farm.infrastructure.Aviary;
+import com.victory.farm.staff.Employee;
+import com.victory.farm.staff.Vet;
 
 import java.util.ArrayList;
 import java.util.List;

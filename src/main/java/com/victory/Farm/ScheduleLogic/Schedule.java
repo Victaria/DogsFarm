@@ -1,9 +1,10 @@
-package com.victory.Farm.ScheduleLogic;
+package com.victory.farm.scheduleLogic;
 
-import com.victory.Farm.Dogs.Age;
-import com.victory.Farm.Dogs.Dog;
-import com.victory.Farm.Infrastructure.Aviary;
-import com.victory.Farm.Storage;
+import com.victory.farm.dogs.AdultDog;
+import com.victory.farm.dogs.Dog;
+import com.victory.farm.dogs.Puppy;
+import com.victory.farm.infrastructure.Aviary;
+import com.victory.farm.Storage;
 
 public class Schedule {
 
@@ -25,22 +26,20 @@ public class Schedule {
         System.out.println("---------------------------------next step------------------------------------");
 
         for (Dog dog : Storage.getDogsList()) {
-            switch (dog.getAge()) {
-                case PUPPY:
-                    Actions.puppiesTrain(dog);
-                    break;
-                case ADULT:
-                    Actions.adultsWork(dog);
-                    break;
-                case OLD:
-                    Actions.dogsCameHome(dog);
-                    break;
+            if (dog instanceof Puppy) {
+                Actions.puppiesTrain((Puppy) dog);
+            }
+            if (dog instanceof AdultDog) {
+                Actions.adultsWork((AdultDog) dog);
+            }
+            if (dog instanceof AdultDog) {
+                Actions.dogsCameHome(dog);
             }
         }
         System.out.println("---------------------------------next step------------------------------------");
 
         for (Dog dog : Storage.getDogsList()) {
-            if (dog.getAge().equals(Age.ADULT) || dog.getAge().equals(Age.PUPPY)) {
+            if (dog instanceof AdultDog || dog instanceof Puppy) {
                 Actions.dogsCameHome(dog);
             }
         }

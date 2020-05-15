@@ -1,4 +1,4 @@
-package com.victory.Farm.Dogs;
+package com.victory.farm.dogs;
 
 public enum Instructions {
     SIT,

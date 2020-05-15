@@ -1,69 +1,25 @@
-package com.victory.Farm.Staff;
+package com.victory.farm.staff;
 
-import com.victory.Farm.Dogs.Dog;
-import com.victory.Farm.Dogs.Instructions;
-import com.victory.Farm.Infrastructure.Aviary;
-import com.victory.Farm.Infrastructure.DogsArea;
+import com.victory.farm.dogs.*;
+import com.victory.farm.infrastructure.Aviary;
+import com.victory.farm.infrastructure.DogsArea;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class Employee {
+public class Employee extends Staff{
 
-    private int id;
-    private String name;
-    private String surname;
-    private Date birthDate;
-
-    public Employee(EmployeeBuilder employeeBuilder) {
-        this.id = employeeBuilder.getId();
-        this.name = employeeBuilder.getName();
-        this.surname = employeeBuilder.getSurname();
-        this.birthDate = employeeBuilder.getBirthDate();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public Employee(StaffBuilder staffBuilder) {
+        super(staffBuilder);
     }
 
     public synchronized void feed(Dog dog) {
         if (!dog.isFed()) dog.setFed(true);
-        switch (dog.getAge()) {
-            case OLD:
-                System.out.println("Employee " + getName() + " is feeding old dog " + dog.getName());
-                break;
-            case ADULT:
-                System.out.println("Employee " + getName() + " is feeding adult dog " + dog.getName());
-                break;
-            case PUPPY:
-                System.out.println("Employee " + getName() + " is feeding puppy " + dog.getName());
-                break;
+        if (dog instanceof OldDog){
+            System.out.println("Employee " + getName() + " is feeding old dog " + dog.getName());
+        } else if (dog instanceof AdultDog){
+            System.out.println("Employee " + getName() + " is feeding adult dog " + dog.getName());
+        } else if (dog instanceof Puppy){
+            System.out.println("Employee " + getName() + " is feeding puppy " + dog.getName());
         }
     }
 
@@ -74,27 +30,27 @@ public class Employee {
         }
     }
 
-    public synchronized void puppiesTrain(Dog dog) {
+    public synchronized void puppiesTrain(Puppy puppy) {
         int i = 0;
-        System.out.println("Puppy " + dog.getName() + " has a training now with " + getName() + " at " + DogsArea.getInstance().getName());
-        List<Instructions> instructionsList = dog.getInstructionsList();
+        System.out.println("Puppy " + puppy.getName() + " has a training now with " + getName() + " at " + DogsArea.getInstance().getName());
+        List<Instructions> instructionsList = puppy.getInstructionsList();
         for (Instructions instruction : Instructions.values()) {
             if (i < 2) {
                 if (instructionsList.isEmpty()) {
                     instructionsList.add(instruction);
                     i++;
-                    System.out.println("Puppy " + dog.getName() + " is learning instruction " + instruction.name());
+                    System.out.println("Puppy " + puppy.getName() + " is learning instruction " + instruction.name());
                 } else if (!instructionsList.contains(instruction)) {
                     instructionsList.add(instruction);
                     i++;
-                    System.out.println("Puppy " + dog.getName() + " is learning instruction " + instruction.name());
+                    System.out.println("Puppy " + puppy.getName() + " is learning instruction " + instruction.name());
                 }
             } else break;
         }
-        if (i < 2) System.out.println("Puppy " + dog.getName() + " knows all instructions.");
+        if (i < 2) System.out.println("Puppy " + puppy.getName() + " knows all instructions.");
     }
 
-    public void adultsWork(Dog dog) {
+    public void adultsWork(AdultDog dog) {
         System.out.println("Adult dog " + dog.getName() + " is working now with " + getName());
     }
 }

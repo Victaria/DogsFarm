@@ -1,4 +1,4 @@
-package com.victory.Farm.Dogs;
+package com.victory.farm.dogs;
 
 import java.util.List;
 
@@ -7,8 +7,6 @@ public class DogBuilder {
     private String name;
     private Boolean isHealthy = false;
     private Boolean isFed = false;
-    private List<Instructions> instructionsList;
-    private Age age;
 
     public DogBuilder name(String name){
         this.name = name;
@@ -30,18 +28,16 @@ public class DogBuilder {
         return this;
     }
 
-    public DogBuilder instructionsList(List<Instructions> instructionsList) {
-        this.instructionsList = instructionsList;
-        return this;
+    public Dog buildPuppy(List<Instructions> instructions){
+        return new Puppy(this, instructions);
     }
 
-    public DogBuilder age(Age age) {
-        this.age = age;
-        return this;
+    public Dog buildAdult(){
+        return new AdultDog(this);
     }
 
-    public Dog build(){
-        return new Dog(this);
+    public Dog buildOld(){
+        return new OldDog(this);
     }
 
     public int getId() {
@@ -60,11 +56,11 @@ public class DogBuilder {
         return isFed;
     }
 
-    public List<Instructions> getInstructionsList() {
+ /*   public List<Instructions> getInstructionsList() {
         return instructionsList;
     }
 
     public Age getAge() {
         return age;
-    }
+    }*/
 }

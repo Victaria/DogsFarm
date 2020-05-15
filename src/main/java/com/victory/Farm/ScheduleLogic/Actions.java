@@ -1,12 +1,16 @@
-package com.victory.Farm.ScheduleLogic;
+package com.victory.farm.scheduleLogic;
 
-import com.victory.Farm.Dogs.Dog;
-import com.victory.Farm.Infrastructure.Aviary;
-import com.victory.Farm.Staff.Employee;
-import com.victory.Farm.Staff.Vet;
-import com.victory.Farm.Storage;
+import com.victory.farm.dogs.AdultDog;
+import com.victory.farm.dogs.Dog;
+import com.victory.farm.dogs.Puppy;
+import com.victory.farm.infrastructure.Aviary;
+import com.victory.farm.staff.Employee;
+import com.victory.farm.staff.Vet;
+import com.victory.farm.Storage;
 
 public class Actions {
+
+    private static ScheduleHandle scheduleHandle;
 
     private static int i = 0;
     private static int j = 0;
@@ -17,6 +21,9 @@ public class Actions {
         }
         Employee employee = Storage.getStaffList().get(i);
         employee.feed(dog);
+      /*  FeedDog feedDog = new FeedDog(dog, employee);
+         scheduleHandle.container.add(feedDog);
+        scheduleHandle.handle();*/
         i++;
     }
 
@@ -40,21 +47,21 @@ public class Actions {
         }
     }
 
-    public static void puppiesTrain(Dog dog) {
+    public static void puppiesTrain(Puppy puppy) {
         if (i >= Storage.getStaffList().size()) {
             i = 0;
         }
         Employee employee = Storage.getStaffList().get(i);
-        employee.puppiesTrain(dog);
+        employee.puppiesTrain(puppy);
         i++;
     }
 
-    public static void adultsWork(Dog dog) {
+    public static void adultsWork(AdultDog adultDog) {
         if (i >= Storage.getStaffList().size()) {
             i = 0;
         }
         Employee employee = Storage.getStaffList().get(i);
-        employee.adultsWork(dog);
+        employee.adultsWork(adultDog);
         i++;
     }
 

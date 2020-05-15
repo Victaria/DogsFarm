@@ -1,49 +1,13 @@
-package com.victory.Farm.Staff;
+package com.victory.farm.staff;
 
-import com.victory.Farm.Dogs.Dog;
+import com.victory.farm.dogs.Dog;
 
 import java.util.Date;
 
-public class Vet {
+public class Vet extends Staff{
 
-    private int id;
-    private String name;
-    private String surname;
-    private Date birthDate;
-
-    public Vet(VetBuilder vetBuilder) {
-        this.id = vetBuilder.getId();
-        this.name = vetBuilder.getName();
-        this.surname = vetBuilder.getSurname();
-        this.birthDate = vetBuilder.getBirthDate();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public Vet(StaffBuilder staffBuilder) {
+        super(staffBuilder);
     }
 
     public void vetExamination(Dog dog) {

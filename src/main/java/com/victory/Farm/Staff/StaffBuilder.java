@@ -1,34 +1,38 @@
-package com.victory.Farm.Staff;
+package com.victory.farm.staff;
 
 import java.util.Date;
 
-public class VetBuilder {
+public class StaffBuilder {
     private int id;
     private String name;
     private String surname;
     private Date birthDate;
 
-    public VetBuilder id(int id) {
+    public StaffBuilder id(int id) {
         this.id = id;
         return this;
     }
 
-    public VetBuilder name(String name) {
+    public StaffBuilder name(String name) {
         this.name = name;
         return this;
     }
 
-    public VetBuilder surname(String surname) {
+    public StaffBuilder surname(String surname) {
         this.surname = surname;
         return this;
     }
 
-    public VetBuilder birthDate(Date date) {
+    public StaffBuilder birthDate(Date date) {
         this.birthDate = date;
         return this;
     }
 
-    public Vet build() {
+    public Employee build() {
+        return new Employee(this);
+    }
+
+    public Vet buildVet() {
         return new Vet(this);
     }
 
@@ -47,5 +51,4 @@ public class VetBuilder {
     public int getId() {
         return id;
     }
-
 }
