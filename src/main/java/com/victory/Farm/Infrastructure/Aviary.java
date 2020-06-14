@@ -1,20 +1,24 @@
-package com.victory.Farm.Infrastructure;
+package com.victory.farm.infrastructure;
 
 public class Aviary {
-    private int id;
-    private Boolean isBusy = false;
-    private int dogId = -1;
-    private Boolean isClear = true;
 
-    public Aviary(int id) {
-        this.id = id;
+    private int id;
+    private Boolean isBusy;
+    private int dogId;
+    private Boolean isClear;
+
+    public Aviary(AviaryBuilder aviaryBuilder) {
+        this.id = aviaryBuilder.getId();
+        this.isBusy = aviaryBuilder.isBusy();
+        this.dogId = aviaryBuilder.getDogId();
+        this.isClear = aviaryBuilder.isClear();
     }
 
     public int getId() {
         return id;
     }
 
-    public Boolean getBusy() {
+    public Boolean isBusy() {
         return isBusy;
     }
 
@@ -30,7 +34,7 @@ public class Aviary {
         this.dogId = dogId;
     }
 
-    public Boolean getClear() {
+    public Boolean isClear() {
         return isClear;
     }
 

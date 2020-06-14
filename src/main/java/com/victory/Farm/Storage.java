@@ -1,46 +1,49 @@
-package com.victory.Farm;
+package com.victory.farm;
 
-import com.victory.Farm.Dogs.Dog;
-import com.victory.Farm.Infrastructure.Aviary;
-import com.victory.Farm.Staff.Employee;
-import com.victory.Farm.Staff.Vet;
+import com.victory.farm.dogs.Dog;
+import com.victory.farm.infrastructure.Aviary;
+import com.victory.farm.staff.Employee;
+import com.victory.farm.staff.Vet;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Storage {
-    private static ArrayList<Dog> dogsList = new ArrayList<Dog>();
-    private static ArrayList<Employee> staffList = new ArrayList<Employee>();
-    private static ArrayList<Vet> vetList = new ArrayList<Vet>();
-    private static ArrayList<Aviary> aviaryList = new ArrayList<Aviary>();
 
-    public static void addDog(Dog dog){
+    private static List<Dog> dogsList = new ArrayList<Dog>();
+    private static List<Employee> staffList = new ArrayList<Employee>();
+    private static List<Vet> vetList = new ArrayList<Vet>();
+    private static List<Aviary> aviaryList = new ArrayList<Aviary>();
+
+    public static void addDog(Dog dog) {
         dogsList.add(dog);
     }
 
-    public static ArrayList<Dog> getDogsList(){
+    public static List<Dog> getDogsList() {
         return dogsList;
     }
 
-    public static void addEmployee(Employee employee){
+    public static void addEmployee(Employee employee) {
         staffList.add(employee);
     }
 
-    public static ArrayList<Employee> getStaffList(){
+    public static List<Employee> getStaffList() {
         return staffList;
     }
 
-    public static void addVet(Vet vet){
+    public static void addVet(Vet vet) {
         vetList.add(vet);
     }
 
-    public static ArrayList<Vet> getVetList(){
+    public static List<Vet> getVetList() {
         return vetList;
     }
 
-    public static void addAviary(Aviary aviary){
+    public static void addAviary(Aviary aviary) {
         aviaryList.add(aviary);
     }
 
-    public static ArrayList<Aviary> getAviaryList(){
+    public static List<Aviary> getAviaryList() {
         return aviaryList;
     }
 }

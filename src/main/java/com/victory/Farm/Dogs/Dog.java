@@ -1,29 +1,18 @@
-package com.victory.Farm.Dogs;
+package com.victory.farm.dogs;
 
+import java.util.List;
 
-import java.util.ArrayList;
-
-public class Dog {
+public abstract class Dog {
     private int id;
     private String name;
-    private Boolean isHealthy = false;
-    private Boolean isFed = false;
-    private ArrayList<Instructions> instructionsList;
-    private Age age;
+    private Boolean isHealthy;
+    private Boolean isFed;
 
-    public Dog(int id, String name, Age age){
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
-    public Dog(int id, String name, Boolean isHealthy, Boolean isFed, ArrayList<Instructions> instructionsList, Age age) {
-        this.id = id;
-        this.name = name;
-        this.isHealthy = isHealthy;
-        this.isFed = isFed;
-        this.instructionsList = instructionsList;
-        this.age = age;
+    public Dog(DogBuilder dogBuilder) {
+        this.id = dogBuilder.getId();
+        this.name = dogBuilder.getName();
+        this.isHealthy = dogBuilder.getHealthy();
+        this.isFed = dogBuilder.getFed();
     }
 
     public int getId() {
@@ -38,7 +27,7 @@ public class Dog {
         this.name = name;
     }
 
-    public Boolean getHealthy() {
+    public Boolean isHealthy() {
         return isHealthy;
     }
 
@@ -46,7 +35,7 @@ public class Dog {
         isHealthy = healthy;
     }
 
-    public Boolean getFed() {
+    public Boolean isFed() {
         return isFed;
     }
 
@@ -54,32 +43,8 @@ public class Dog {
         isFed = fed;
     }
 
-    public ArrayList<Instructions> getInstructionsList() {
-        return instructionsList;
-    }
-
-    public void setInstructionsList(ArrayList<Instructions> instructionsList) {
-        this.instructionsList = instructionsList;
-    }
-
-    public void addInstruction(Instructions instruction){
-        if (!instructionsList.contains(instruction))
-            instructionsList.add(instruction);
-    }
-
-    public Boolean knowsInstruction(Instructions instruction){
-        return instructionsList.contains(instruction);
-    }
-
-    public Age getAge() {
-        return age;
-    }
-
-    public void setAge(Age age) {
-        this.age = age;
-    }
-
-    public void dogAtHome(){
+    public void dogAtHome() {
         System.out.println("Dog " + getName() + " is at home now.");
     }
+
 }

@@ -1,21 +1,21 @@
-package com.victory.Farm.Infrastructure;
+package com.victory.farm.infrastructure;
 
 public class DogsArea {
-    private static volatile DogsArea instance;
-    public static DogsArea getInstance(){
+    private static DogsArea instance;
+
+    private DogsArea() {
+    }
+
+    public static DogsArea getInstance() {
         DogsArea localInstance = instance;
-        if (localInstance == null){
-            synchronized (DogsArea.class) {
-                localInstance = instance;
-                if (localInstance == null){
-                    instance = localInstance = new DogsArea();
-                }
-            }
+
+        if (localInstance == null) {
+            instance = localInstance = new DogsArea();
         }
         return localInstance;
     }
 
-    public String getName(){
+    public String getName() {
         return "DogsArea";
     }
 }
